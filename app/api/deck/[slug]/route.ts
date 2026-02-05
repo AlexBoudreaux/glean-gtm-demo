@@ -15,11 +15,11 @@ export async function DELETE(
   try {
     const { slug } = await params
 
-    deletePresentation(slug)
-    deleteMetadata(slug)
+    await deletePresentation(slug)
+    await deleteMetadata(slug)
 
-    const index = getIndex().filter((s) => s !== slug)
-    setIndex(index)
+    const index = (await getIndex()).filter((s) => s !== slug)
+    await setIndex(index)
 
     return NextResponse.json({ success: true })
   } catch (error) {

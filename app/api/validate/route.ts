@@ -12,7 +12,7 @@ export async function POST(request: Request) {
       )
     }
 
-    const metadata = getMetadata(slug)
+    const metadata = await getMetadata(slug)
 
     if (!metadata) {
       return NextResponse.json({ error: 'Deck not found' }, { status: 404 })
@@ -22,7 +22,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Invalid PIN' }, { status: 401 })
     }
 
-    const html = getPresentation(slug)
+    const html = await getPresentation(slug)
 
     if (!html) {
       return NextResponse.json({ error: 'Presentation not found' }, { status: 404 })

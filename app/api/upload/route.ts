@@ -33,7 +33,7 @@ export async function POST(request: Request) {
     const pin = generatePin()
     const html = await file.text()
 
-    setPresentation(slug, html)
+    await setPresentation(slug, html)
 
     const metadata: DeckMetadata = {
       slug,
@@ -41,12 +41,12 @@ export async function POST(request: Request) {
       pin,
       createdAt: new Date().toISOString(),
     }
-    setMetadata(slug, metadata)
+    await setMetadata(slug, metadata)
 
-    const index = getIndex()
+    const index = await getIndex()
     if (!index.includes(slug)) {
       index.push(slug)
-      setIndex(index)
+      await setIndex(index)
     }
 
     const baseUrl = process.env.VERCEL_URL

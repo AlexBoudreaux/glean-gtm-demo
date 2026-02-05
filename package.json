@@ -10,6 +10,7 @@
     "upload": "tsx scripts/upload.ts"
   },
   "dependencies": {
+    "@vercel/blob": "^2.1.0",
     "framer-motion": "^12.26.2",
     "next": "^15.5.12",
     "react": "^18.3.1",

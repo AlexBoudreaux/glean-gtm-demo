@@ -9,19 +9,20 @@ interface Deck {
   createdAt: string
 }
 
-function getDecks(): Deck[] {
-  const index = getIndex()
-  return index
-    .map((slug) => {
-      const meta = getMetadata(slug)
+async function getDecks(): Promise<Deck[]> {
+  const index = await getIndex()
+  const decks = await Promise.all(
+    index.map(async (slug) => {
+      const meta = await getMetadata(slug)
       if (!meta) return null
       return { slug: meta.slug, company: meta.company, createdAt: meta.createdAt }
     })
-    .filter(Boolean) as Deck[]
+  )
+  return decks.filter(Boolean) as Deck[]
 }
 
 export default async function Home() {
-  const decks = getDecks()
+  const decks = await getDecks()
 
   return <Dashboard initialDecks={decks} />
 }
