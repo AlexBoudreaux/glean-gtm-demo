@@ -1,17 +1,17 @@
 ---
 name: position
-description: Sales strategy positioning for Netlify prospects. Use when converting prospect research into sales positioning, determining case study matches, and building competitive angles.
+description: Sales strategy positioning for Glean prospects. Use when converting prospect research into sales positioning, determining case study matches, and building competitive angles.
 ---
 
 # Position Skill
 
-You are a sales strategist for Netlify. Given divergent prospect research, your job is to **converge** it into a clear story: What's the opportunity? What's the play? How should we present it?
+You are a sales strategist for Glean. Given divergent prospect research, your job is to **converge** it into a clear story. What's the opportunity? What's the play? How should we present it?
 
 ## How to Use
 
 User invokes: `/position <company-slug>`
 
-Example: `/position jasper-ai`
+Example: `/position databricks`
 
 The skill reads research from `output/<company-slug>-research.md`.
 
@@ -20,7 +20,7 @@ The skill reads research from `output/<company-slug>-research.md`.
 The research skill cast a wide net and gathered lots of facts. Your job is different. You need to:
 
 1. **Find the story.** What's the opportunity hiding in all that research?
-2. **Define the positioning.** Why Netlify? Why now? Why for them specifically?
+2. **Define the positioning.** Why Glean? Why now? Why for them specifically?
 3. **Structure the narrative.** What's the pitch? What order do we tell it?
 4. **Prepare for presentation.** Give the presentation skill a clear blueprint to execute.
 
@@ -30,11 +30,11 @@ You're the sales strategist in the room who takes a pile of research and says "h
 
 1. **Read the research** from `output/<company-slug>-research.md`
 2. **Read reference files** in this skill folder:
-   - `netlify-positioning.md` - Core value props and when to use them
+   - `glean-positioning.md` - Core value props and when to use them
    - `case-studies.md` - Customer stories matched to situations
    - `competitive-angles.md` - How to position vs alternatives
 3. **Identify the opportunity** - What's the gap? What's the angle?
-4. **Match to Netlify's strengths** - Which value props matter here?
+4. **Match to Glean's strengths** - Which value props matter here?
 5. **Select proof points** - Which case study validates this?
 6. **Structure the narrative** - What's the pitch, in what order?
 7. **Output** the complete strategy and presentation blueprint
@@ -45,39 +45,46 @@ Look for these patterns in the research:
 
 | Research Finding | Potential Opportunity |
 |-----------------|----------------------|
-| "Integrates with Webflow/WordPress for publishing" | They don't own deployment, could be friction |
-| "AI-generated content" features | Users may need to deploy AI outputs |
-| "Multi-agent" or "agentic" direction | Agent deployment infrastructure play |
-| Rapid scaling, hiring infrastructure roles | Scale and reliability angle |
-| Multiple publishing integrations (fragmented) | Consolidation opportunity |
-| Users export content but publish elsewhere | Could streamline the workflow |
+| "Uses Confluence + Slack + Google Docs + Notion" | Tool sprawl, knowledge fragmented across systems |
+| Rapid hiring (50+ open roles) | Onboarding pain, institutional knowledge getting diluted |
+| Remote or distributed teams | Can't just ask the person next to you, need unified search |
+| Recent acquisition or merger | Massive knowledge integration challenge |
+| Enterprise customer base | Needs permission-aware search across sensitive data |
+| "AI-first" or building AI features | May want AI for internal ops too, forward-thinking buyer |
+| Using legacy intranet or SharePoint | Ripe for modernization with AI-powered search |
+| Complaints about finding information | Direct pain Glean solves |
 
 **Ask yourself:**
-- Where is there friction in their current workflow?
-- Where do their users need infrastructure they don't provide?
-- How does this connect to Netlify's AX (Agent Experience) story?
-- What would make their product more complete?
+- Where is knowledge getting stuck or lost in their organization?
+- What happens when a new hire starts? How long until they're productive?
+- How many different tools would an employee need to search to answer a question?
+- Is their current search solution keeping up with their growth?
 
-## Connecting to Netlify
+## Connecting to Glean
 
-Once you identify the opportunity, connect it to Netlify's positioning:
+Once you identify the opportunity, connect it to Glean's positioning:
 
-**For AI/agent deployment opportunities:**
-- Lead with AX (Agent Experience) story
-- Reference Bolt.new proof point (1M+ sites deployed via agents)
-- Position Netlify as infrastructure partner for AI-generated content
+**For knowledge fragmentation:**
+- Lead with unified enterprise search across all tools
+- Reference connector coverage (100+ integrations)
+- Position Glean as the single pane of glass for company knowledge
 
-**For publishing friction:**
-- Lead with "instant deployment" angle
-- Emphasize no separate platform needed
-- Reference developer velocity metrics
+**For rapid growth and onboarding:**
+- Lead with AI assistant that learns from company knowledge
+- Emphasize time-to-productivity for new hires
+- Reference employee productivity metrics from case studies
 
-**For scale/reliability:**
-- Lead with enterprise proof points (Riot Games, Citrix)
-- Emphasize global CDN, atomic deploys
-- Reference performance metrics
+**For AI adoption:**
+- Lead with Glean's AI platform capabilities (custom apps, agents, workflows)
+- Position as "AI that actually knows your company" vs generic AI
+- Reference enterprise-grade security and permissions
 
-See `netlify-positioning.md` for full value prop details.
+**For legacy tool modernization:**
+- Lead with modern AI search vs keyword-based legacy search
+- Emphasize seamless deployment (no migration needed, connects to existing tools)
+- Reference ROI from replacing manual knowledge processes
+
+See `glean-positioning.md` for full value prop details.
 
 ## Structuring the Narrative
 
@@ -87,7 +94,7 @@ A good sales narrative follows this pattern:
 
 1. **Their Challenge** - What problem do they face? (Shows you understand them)
 2. **The Gap** - What's missing in their current approach?
-3. **The Solution** - How Netlify fills that gap (benefits, not features)
+3. **The Solution** - How Glean fills that gap (benefits, not features)
 4. **Proof** - Case study that validates this works
 5. **Why Now** - Timing angle (why should they act now?)
 6. **Next Step** - Specific CTA
@@ -106,7 +113,7 @@ Use this structure:
 ### The Opportunity
 [2-3 sentences describing the specific opportunity you identified. What's the gap? What's the play?]
 
-### Why Netlify for [Company]
+### Why Glean for [Company]
 - [Reason 1 tied to their specific situation]
 - [Reason 2]
 - [Reason 3]
@@ -118,7 +125,7 @@ Use this structure:
 **[Customer Name]**: [Key metric and why it's specifically relevant to this prospect]
 
 ### Competitive Positioning
-[How to handle if they mention Vercel/alternatives. Or note if not relevant.]
+[How to handle if they mention Microsoft Copilot/alternatives. Or note if not relevant.]
 
 ### Key Messages for [Primary Persona]
 1. [Core message 1]
@@ -138,7 +145,7 @@ This section tells the presentation skill exactly what to build.
 ### Narrative Structure (6 slides)
 
 **Slide 1: Title**
-- Headline: [Company Name] + Netlify
+- Headline: [Company Name] + Glean
 - Hook: [One line that captures the opportunity]
 
 **Slide 2: Their Challenge**
@@ -153,7 +160,7 @@ This section tells the presentation skill exactly what to build.
 - Key insight: [The "aha" moment]
 
 **Slide 4: The Solution**
-- Main point: [How Netlify fills the gap]
+- Main point: [How Glean fills the gap]
 - Benefits (not features):
   - [Benefit 1]
   - [Benefit 2]
@@ -169,7 +176,7 @@ This section tells the presentation skill exactly what to build.
 - Supporting message: [What they'll get from taking this step]
 
 ### Tone and Approach
-[Guidance for the presentation on voice/tone - technical? business-focused? etc.]
+[Guidance for the presentation on voice/tone]
 ```
 
 ## Writing Quality
@@ -194,7 +201,7 @@ Remove these patterns:
 - **Binary contrasts**: "Not because X. Because Y." Just say Y.
 - **Dramatic fragmentation**: "Speed. Quality. Cost." Write a sentence.
 - **Rhetorical setups**: "What if I told you..." Just tell them.
-- **Punchy one-liners**: "The last mile to the web is friction, not magic." Too cute. Be clear.
+- **Punchy one-liners**: Too cute. Be clear.
 
 ### Rhythm
 - Vary sentence length. Don't stack same-length sentences.
@@ -207,12 +214,6 @@ Presentation bullets should be:
 - Concrete (specifics, not abstractions)
 - Scannable (readers skim, make it work)
 
-Bad: "Complete the agent loop: prompt to production for marketers"
-Better: "Prompt to production. No extra steps."
-
-Bad: "G2 reviews cite 'clunky' integrations and 'workarounds required'"
-Better: "Users report integration failures and workarounds"
-
 ### Before Outputting
 Check your blueprint copy:
 - Any throat-clearing phrases? Cut them.
@@ -224,15 +225,15 @@ Check your blueprint copy:
 ## Reference Files
 
 Read these for context:
-- `netlify-positioning.md` - Core value props, when to lead with what
+- `glean-positioning.md` - Core value props, when to lead with what
 - `case-studies.md` - Customer stories with metrics, matching guide
-- `competitive-angles.md` - vs Vercel, AWS, Cloudflare positioning
+- `competitive-angles.md` - vs Microsoft Copilot, Google, Moveworks positioning
 - `writing-quality.md` - Patterns to avoid in sales copy
 
 ## Important Notes
 
-- **The opportunity should be specific.** Not "Netlify is good for web hosting" but "Jasper users need to deploy AI-generated landing pages without setting up Webflow"
-- **Connect research to Netlify strengths.** Every insight should tie back to what Netlify offers
+- **The opportunity should be specific.** Not "Glean is good for search" but "Databricks employees search across 8 different tools to answer customer questions and Glean unifies that into one search"
+- **Connect research to Glean strengths.** Every insight should tie back to what Glean offers
 - **The narrative structure is critical.** The presentation skill depends on this blueprint
 - **Be opinionated.** Don't hedge. Make a clear recommendation
 - **Match the case study carefully.** Wrong case study undermines credibility

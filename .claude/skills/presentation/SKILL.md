@@ -1,6 +1,6 @@
 ---
 name: presentation
-description: Generate Reveal.js sales presentations for Netlify prospects. Use after /position to create slides from strategy, then auto-build and upload to gallery.
+description: Generate standalone HTML sales presentations for Glean prospects. Use after /position to create slides from strategy, then auto-build and upload to gallery.
 ---
 
 # Presentation Skill
@@ -11,7 +11,7 @@ You generate standalone HTML sales presentations. Given a strategy document with
 
 User invokes: `/presentation <company-slug>`
 
-Example: `/presentation jasper-ai`
+Example: `/presentation databricks`
 
 The skill reads strategy from `output/<company-slug>-strategy.md`.
 
@@ -35,22 +35,26 @@ You output a single, self-contained HTML file with embedded CSS and JavaScript. 
 
 ```css
 :root {
-    /* Backgrounds - very dark, almost black */
-    --bg-primary: #050508;
-    --bg-secondary: #0a0a0f;
-    --bg-tertiary: #12121a;
-    --bg-card: #16161f;
+    /* Backgrounds - very dark, Glean navy */
+    --bg-primary: #050735;
+    --bg-secondary: #0a0c3a;
+    --bg-tertiary: #12143f;
+    --bg-card: #161845;
 
     /* Text hierarchy */
     --text-primary: #ffffff;
-    --text-secondary: #a0a0a0;
-    --text-muted: #606060;
+    --text-secondary: #a0a0b8;
+    --text-muted: #606080;
 
-    /* Netlify teal - primary accent */
-    --accent: #05bdba;
-    --accent-light: #32e6e2;
-    --accent-glow: rgba(5, 189, 186, 0.35);
-    --accent-subtle: rgba(5, 189, 186, 0.12);
+    /* Glean lime - primary accent */
+    --accent: #D8FD49;
+    --accent-light: #e4ff7a;
+    --accent-glow: rgba(216, 253, 73, 0.35);
+    --accent-subtle: rgba(216, 253, 73, 0.12);
+
+    /* Glean blue - secondary accent */
+    --secondary: #343CED;
+    --secondary-glow: rgba(52, 60, 237, 0.35);
 
     /* Negative/problem - use sparingly for gaps/issues */
     --negative: #ff4757;
@@ -205,8 +209,8 @@ Main content area with radial gradient background.
 
 ```html
 <div class="slide-eyebrow">Partnership Opportunity</div>
-<div class="slide-title"><span class="accent">Jasper</span> + Netlify</div>
-<div class="slide-subtitle">From prompt to published. One click.</div>
+<div class="slide-title"><span class="accent">Databricks</span> + Glean</div>
+<div class="slide-subtitle">One search for everything your team knows.</div>
 ```
 
 ```css
@@ -248,11 +252,11 @@ For challenge/problem slides. Click to reveal details. Two modes: presenter (col
 <div class="expandable-card" onclick="toggleCard(this)">
     <div class="card-header">
         <div class="card-icon">
-            <i data-lucide="upload"></i>
+            <i data-lucide="search"></i>
         </div>
-        <div class="card-title">Manual Export</div>
+        <div class="card-title">Information Silos</div>
     </div>
-    <div class="card-summary">Users copy/paste content into other tools</div>
+    <div class="card-summary">Knowledge scattered across 8+ different tools</div>
     <div class="card-expand-hint">
         <span>Click for details</span>
         <i data-lucide="chevron-down"></i>
@@ -279,7 +283,7 @@ For challenge/problem slides. Click to reveal details. Two modes: presenter (col
 }
 
 .expandable-card:hover {
-    border-color: rgba(5, 189, 186, 0.3);
+    border-color: rgba(216, 253, 73, 0.3);
     transform: translateY(-2px);
     box-shadow: 0 8px 30px rgba(0,0,0,0.3);
 }
@@ -320,8 +324,8 @@ For solution slides. Stagger animation on slide entry.
             <i data-lucide="check"></i>
         </div>
         <div class="benefit-content">
-            <div class="benefit-title">Prompt to live URL in one click</div>
-            <div class="benefit-desc">User creates in Jasper, clicks publish, gets a URL.</div>
+            <div class="benefit-title">One search across all tools</div>
+            <div class="benefit-desc">Slack, Confluence, Google Drive, Salesforce, and 100+ more.</div>
         </div>
     </div>
 </div>
@@ -377,17 +381,17 @@ For showing progression or gaps. Use `negative` class for problem states.
 <div class="gap-visual">
     <div class="gap-box from">
         <div class="gap-box-label">Today</div>
-        <div class="gap-box-text">AI creates content</div>
+        <div class="gap-box-text">Search 8 tools separately</div>
     </div>
     <div class="gap-arrow">&rarr;</div>
     <div class="gap-box negative">
         <div class="gap-box-label">Gap</div>
-        <div class="gap-box-text">No deployment</div>
+        <div class="gap-box-text">No unified search</div>
     </div>
     <div class="gap-arrow">&rarr;</div>
     <div class="gap-box to">
-        <div class="gap-box-label">With Netlify</div>
-        <div class="gap-box-text">Live URL</div>
+        <div class="gap-box-label">With Glean</div>
+        <div class="gap-box-text">One search, all answers</div>
     </div>
 </div>
 ```
@@ -430,7 +434,7 @@ For proof slides. Glowing stat with count-up animation.
 <div class="stat-section">
     <div class="stat-container">
         <div class="big-number" id="statNumber">0</div>
-        <div class="big-number-label">sites deployed via AI agents</div>
+        <div class="big-number-label">hours saved per employee per week</div>
     </div>
 </div>
 ```
@@ -469,7 +473,7 @@ For proof slides. Glowing stat with count-up animation.
 ```javascript
 function animateNumber() {
     const el = document.getElementById('statNumber');
-    const target = 1000000;
+    const target = 4; // e.g., hours saved per week
     const duration = 1500;
     const start = performance.now();
 
@@ -477,17 +481,12 @@ function animateNumber() {
         const elapsed = currentTime - start;
         const progress = Math.min(elapsed / duration, 1);
         const easeOut = 1 - Math.pow(1 - progress, 3);
-        const current = Math.floor(easeOut * target);
+        const current = easeOut * target;
 
-        if (current >= 1000000) {
-            el.textContent = '1M+';
-        } else if (current >= 1000) {
-            el.textContent = Math.floor(current / 1000) + 'K+';
-        } else {
-            el.textContent = current;
-        }
+        el.textContent = current.toFixed(1);
 
         if (progress < 1) requestAnimationFrame(update);
+        else el.textContent = target + '+';
     }
 
     requestAnimationFrame(update);
@@ -542,7 +541,7 @@ Real button with gradient, hover effects, and glow.
 
 ### Slide 1: Title
 - Eyebrow: "Partnership Opportunity"
-- Title: "[Company] + Netlify" with company name in accent
+- Title: "[Company] + Glean" with company name in accent
 - Subtitle: Hook from blueprint
 - Optional: Flow visual showing transformation
 
@@ -679,7 +678,7 @@ Use the `<i>` element with `data-lucide` attribute:
 <i data-lucide="check"></i>
 <i data-lucide="arrow-right"></i>
 <i data-lucide="alert-triangle"></i>
-<i data-lucide="upload"></i>
+<i data-lucide="search"></i>
 <i data-lucide="monitor"></i>
 <i data-lucide="clock"></i>
 <i data-lucide="users"></i>
@@ -693,13 +692,15 @@ Use the `<i>` element with `data-lucide` attribute:
 | Checkmark (benefits) | `check` |
 | Arrow (flow, CTA) | `arrow-right` |
 | Warning (problems) | `alert-triangle` |
-| Export (manual process) | `upload` or `copy` |
+| Search (knowledge) | `search` |
 | Screen/Deploy | `monitor` or `globe` |
 | Time | `clock` |
 | People/Team | `users` |
 | Expand hint | `chevron-down` |
 | Integration | `plug` or `link` |
 | AI/Bot | `bot` or `cpu` |
+| Lock (permissions) | `lock` or `shield` |
+| Database (knowledge) | `database` |
 
 ### Styling Icons
 
@@ -731,9 +732,9 @@ Icons inherit `currentColor` by default. Control size with width/height:
 <div class="expandable-card" onclick="toggleCard(this)">
     <div class="card-header">
         <div class="card-icon">
-            <i data-lucide="upload"></i>
+            <i data-lucide="search"></i>
         </div>
-        <div class="card-title">Manual Export</div>
+        <div class="card-title">Knowledge Fragmentation</div>
     </div>
     <div class="card-expand-hint">
         <span>Click for details</span>
@@ -748,18 +749,18 @@ Browse all icons at: https://lucide.dev/icons
 
 ## After Generating
 
-Upload the presentation to the gallery using curl:
+Upload the presentation to the gallery. The gallery URL will be provided by the user or found in `GALLERY_URL` env var.
 
 ```bash
-curl -X POST "https://lucent-zabaione-ae9488.netlify.app/api/upload" \
-  -H "Authorization: Bearer 18f6fcdf506c88eb766c0b21ddcec679" \
+curl -X POST "${GALLERY_URL}/api/upload" \
+  -H "Authorization: Bearer ${ADMIN_SECRET}" \
   -F "file=@output/<company-slug>-slides.html;type=text/html" \
   -F "company=<Company Name>"
 ```
 
 The API returns JSON with the deck URL and PIN:
 ```json
-{"success":true,"slug":"company-name","pin":"1234","url":"https://lucent-zabaione-ae9488.netlify.app/deck/company-name"}
+{"success":true,"slug":"company-name","pin":"1234","url":"https://your-gallery.vercel.app/deck/company-name"}
 ```
 
 Report back to the user:
@@ -793,7 +794,5 @@ Before outputting:
 ---
 
 ## Reference
-
-Full working example: `output/jasper-ai-v3.html`
 
 This presentation style is intentionally opinionated. Consistency across sales decks is a feature, not a bug. Adapt content to each client while keeping the visual system intact.

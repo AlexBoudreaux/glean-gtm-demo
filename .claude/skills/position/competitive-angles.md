@@ -1,6 +1,6 @@
 # Competitive Positioning
 
-How to position Netlify against alternatives. Remember: differentiate, don't bash.
+How to position Glean against alternatives. Differentiate, don't bash.
 
 ---
 
@@ -9,88 +9,126 @@ How to position Netlify against alternatives. Remember: differentiate, don't bas
 Sometimes the opportunity isn't replacing an existing solution. It's filling a gap.
 
 **Examples of non-competitive opportunities:**
-- Prospect integrates with Webflow/WordPress but doesn't provide native hosting → Netlify as infrastructure partner
-- Prospect's users need to deploy AI-generated content → Netlify as deployment layer
-- Prospect is building new features that need hosting → Netlify powers the new capability
+- Prospect uses basic SharePoint search and wants AI-powered results instead of keyword matching
+- Prospect has no unified search at all (employees just ask each other or search individual tools)
+- Prospect is building an AI strategy from scratch and needs a platform
 
-In these cases, skip competitive positioning entirely. Focus on the partnership/infrastructure angle.
+In these cases, skip competitive positioning entirely. Focus on the value of having unified, AI-powered search and knowledge.
 
 ---
 
-## vs Vercel
+## vs Microsoft Copilot (M365 Copilot)
+
+This is the most common competitive conversation. The core difference is ecosystem-agnostic (Glean) vs ecosystem-bound (Copilot).
 
 ### Key Differentiators
-- **Framework flexibility** - Not tied to Next.js, works with any framework
-- **Built-in features** - Forms, identity, A/B testing included (not paid add-ons)
-- **More generous free tier** - Better for teams starting out
-- **Enterprise maturity** - Longer track record with large companies
+- **Ecosystem coverage**: Glean connects to 100+ apps with turnkey connectors. Copilot works best within Microsoft 365 and has limited third-party coverage.
+- **Connector quality**: Glean connectors are ready to use. Copilot connectors "are frameworks that require developer work."
+- **Permission handling**: Glean enforces document-level permissions across all sources in real time. Copilot depends on individual connectors and often only enforces data-source level permissions.
+- **Model flexibility**: Glean supports 15+ LLMs via Model Hub with no vendor lock-in. Copilot is primarily Azure OpenAI.
+- **Licensing simplicity**: Glean has simple per-seat pricing. Copilot has multiple licensing layers (M365 Copilot, Copilot Studio, Power Platforms, Dynamics add-ons).
+- **Structured data**: Glean indexes CRM, HR, ticketing, custom Salesforce objects, Databricks, Snowflake, BigQuery. Copilot has no native support for Databricks, Workday, BigQuery, and can't index custom Salesforce objects.
 
 ### Messaging Approach
-- Don't bash Vercel directly
-- "Netlify works great with Next.js too, without framework lock-in"
-- "Built-in features mean fewer third-party integrations to manage"
-- "Many teams use both. Netlify gives you flexibility as your needs evolve."
+- "Most enterprises use 20-50+ different tools. Copilot covers the Microsoft slice. Glean covers everything."
+- "Glean is ecosystem-agnostic. Your team isn't all-Microsoft, and your search shouldn't be either."
+- "Simple per-seat pricing. No Copilot Studio, no Power Platform add-ons, no licensing maze."
 
 ### When They Say...
 
 | Objection | Response |
 |-----------|----------|
-| "We're on Vercel" | "Many teams use both. Netlify gives you flexibility to use any framework as your needs evolve." |
-| "Vercel is better for Next.js" | "We have deep Next.js support too. DocuSign runs their Next.js sites on Netlify at enterprise scale." |
-| "We need SSR/ISR" | "Netlify supports SSR and ISR. Plus our edge functions let you run logic closer to users globally." |
+| "We're rolling out Copilot" | "Many customers run both. Copilot handles Microsoft apps, Glean connects the rest. They complement each other." |
+| "Microsoft covers everything" | "Does your company only use Microsoft tools? Most enterprises have Slack, Salesforce, Jira, Confluence, Google Drive, and dozens more. Copilot can't search those natively." |
+| "Copilot is cheaper because we already pay for M365" | "Copilot is an additional $30/user/month on top of M365. And it only covers Microsoft apps. Glean covers your entire tool stack for a similar per-seat cost." |
+| "Our IT team prefers Microsoft" | "Glean deploys on Azure too (VPC option). IT gets the infrastructure they trust with coverage across all your tools." |
 
 ---
 
-## vs AWS Amplify
+## vs Google (Vertex AI Search / Cloud Search)
+
+Same story as Copilot but for Google-centric organizations.
 
 ### Key Differentiators
-- **Dramatically simpler** - No AWS complexity to navigate
-- **Faster time to deploy** - Minutes not hours
-- **Less ops overhead** - Focus on code, not infrastructure
-- **Better DX** - Deploy previews, intuitive dashboard
+- Google Workspace-bound vs ecosystem-agnostic
+- Limited connector coverage outside Google ecosystem
+- Glean's Enterprise Graph provides deeper personalization
 
 ### Messaging Approach
-- "All the power, none of the AWS complexity"
-- "Your developers will thank you"
-- "Ship in minutes instead of configuring for hours"
+- Same angle as Copilot: "Your company uses more than Google tools"
+- "Google search is great for the internet. Glean search is built for your company."
+
+---
+
+## vs Moveworks
+
+### Key Differentiators
+- **Scope**: Glean is a horizontal platform (search + assistant + agents across all departments). Moveworks specializes in IT and HR support automation.
+- **Search**: Glean provides universal enterprise search. Moveworks has narrower cross-tool search.
+- **Expansion**: Glean serves sales, marketing, engineering, support, HR, and IT. Moveworks primarily serves IT helpdesk.
+
+### Messaging Approach
+- "If your only pain point is IT ticket volume, Moveworks might work. If you want AI for the entire company, that's Glean."
+- "Glean starts with search and expands to agents. Moveworks starts with ticket automation and stays there."
 
 ### When They Say...
 
 | Objection | Response |
 |-----------|----------|
-| "We're already in AWS" | "Netlify integrates with your AWS backend. You get better DX for the frontend without leaving AWS entirely." |
-| "AWS Amplify is cheaper" | "Total cost includes dev time. Our customers save significant engineering hours compared to managing Amplify." |
+| "We use Moveworks for IT" | "Moveworks is good for IT tickets. Glean covers IT and every other department. Most of the value is in sales, support, engineering, and HR, not just IT." |
+| "Moveworks has agents too" | "Moveworks agents automate IT workflows. Glean agents work across all connected tools and departments." |
 
 ---
 
-## vs Cloudflare Pages
+## vs Coveo
 
 ### Key Differentiators
-- **More mature** - Longer track record, fuller feature set
-- **Better DX** - More intuitive for most web development use cases
-- **Stronger ecosystem** - Integrations, plugins, community
-- **Built-in features** - Forms, identity, etc. that Cloudflare lacks
+- **Focus**: Glean is internal enterprise search and AI. Coveo focuses on customer-facing search (ecommerce, support portals).
+- **Best for**: Glean for employee productivity. Coveo for enhancing search within Salesforce, SAP, Adobe, or ecommerce sites.
+- **AI scope**: Glean has full generative AI assistant and agents. Coveo focuses on ML-powered relevance and recommendations.
 
 ### Messaging Approach
-- "Purpose-built for web development"
-- "Cloudflare Pages is relatively new; Netlify has been refining this for years"
-- "Our ecosystem of integrations and plugins is more mature"
+- "Coveo is great for customer-facing search. Glean is built for your employees."
+- "Different problems. Coveo improves your customers' search experience. Glean improves your employees' search experience."
+
+### When They Say...
+
+| Objection | Response |
+|-----------|----------|
+| "We already use Coveo" | "Coveo and Glean solve different problems. Coveo helps your customers find things. Glean helps your employees find things. They don't compete." |
 
 ---
 
-## vs WordPress/Webflow (Indirect Competition)
+## vs Elastic (Elasticsearch)
 
-Sometimes we're not replacing WordPress or Webflow. We're complementing them or filling a gap they leave.
+### Key Differentiators
+- **Approach**: Glean is turnkey SaaS. Elastic is open-source search infrastructure that requires engineering to build, secure, and operate.
+- **Setup**: Glean is ready in days. Elastic requires significant DevOps investment.
+- **AI**: Glean has built-in AI assistant and agents. Elastic provides search infrastructure but AI must be built on top.
 
-### The Gap Angle
-- "WordPress/Webflow are great for full websites"
-- "But for quick landing pages, campaign pages, or AI-generated content, setting up a CMS is overkill"
-- "Netlify offers instant deployment without the CMS overhead"
+### Messaging Approach
+- "Elastic is infrastructure. Glean is a product. Most companies don't want to build and maintain search clusters."
+- "Your engineering team has better things to build than internal search infrastructure."
 
-### When They Already Integrate With Webflow/WordPress
-- Don't position as replacement
-- Position as "for the use cases that don't need a full CMS"
-- "Your users who need quick pages shouldn't have to set up Webflow"
+### When They Say...
+
+| Objection | Response |
+|-----------|----------|
+| "We can build this ourselves with Elastic" | "You could. It'll take 6-12 months of engineering time, ongoing maintenance, and you still won't have permission-aware AI agents. Glean is live in days." |
+| "Elastic is open source and free" | "The software is free. The engineering time to build, secure, maintain, and scale enterprise search on Elastic is not." |
+
+---
+
+## vs Guru
+
+### Key Differentiators
+- **Focus**: Glean searches across all enterprise data. Guru is a governed knowledge base with verification workflows.
+- **Scope**: Glean connects to 100+ tools. Guru is a standalone knowledge management tool.
+- **Best for**: Glean for finding information anywhere. Guru for teams that need authoritative, verified knowledge articles.
+
+### Messaging Approach
+- "Guru is great for curated knowledge. Glean searches everything, including Guru."
+- "Most answers aren't in a knowledge base. They're in Slack threads, meeting notes, Jira tickets, and Google Docs."
 
 ---
 
@@ -98,36 +136,34 @@ Sometimes we're not replacing WordPress or Webflow. We're complementing them or 
 
 | Objection | Response |
 |-----------|----------|
-| "We're happy with our current setup" | "That's great. Many teams start exploring Netlify when they need to scale or want to ship faster. Worth keeping in mind." |
-| "It's too expensive" | "Have you seen our free tier? And our enterprise customers often see cost savings. Citrix saved 65%." |
-| "We need [specific feature]" | [Check if Netlify has it. Often they do and prospect doesn't know.] |
-| "Our devs prefer X framework" | "Netlify works with any framework. Your devs can use whatever they're comfortable with." |
-| "We need SSO/compliance" | "Netlify is SOC 2 Type II certified with SSO support for enterprise customers." |
-| "What about vendor lock-in?" | "Your code stays in your git repo. Netlify doesn't lock you in. If you leave, you take everything with you." |
+| "We're happy with our current setup" | "That's what most customers say before they see that employees spend 2-3 hours per week just searching for information. Worth a 30-minute demo to see what you're missing." |
+| "It's too expensive" | "At ~$50/seat/month, Glean typically delivers 5-17x ROI on time savings alone. Super.com saw 17x return. The cost of not having it is higher." |
+| "Will people actually use it?" | "40% weekly active usage (2x industry benchmark). Upside hit 92% adoption. People use it because it actually works." |
+| "What about data security?" | "Glean enforces the same permissions from your source systems in real time. SOC 2 Type II, GDPR, HIPAA, ISO 27001. LLM providers are contractually prevented from training on your data." |
+| "We already have ChatGPT/generic AI" | "ChatGPT knows the internet. It doesn't know your company. Glean's AI is grounded in your actual documents, tickets, and conversations with permission enforcement." |
+| "What about vendor lock-in?" | "Glean connects to your existing tools. If you stop using Glean, nothing changes about your data. And the Model Hub supports 15+ LLMs so you're not locked to one AI vendor either." |
 
 ---
 
 ## Competitor Detection to Positioning
 
-| Current Platform | Positioning Angle |
-|------------------|-------------------|
-| Vercel | Framework flexibility, built-in features, no lock-in |
-| AWS Amplify | Simplicity, better DX, faster deploys |
-| Cloudflare Pages | Maturity, ecosystem, full feature set |
-| Self-hosted | Managed platform, focus on code not infrastructure |
-| Traditional hosting | Modern workflow, Deploy Previews, edge delivery |
-| WordPress/Webflow (integration) | Fill the gap for lightweight deployments |
-| None (greenfield) | Full platform benefits, AX story if AI-forward |
+| What They're Using | Positioning Angle |
+|--------------------|-------------------|
+| Microsoft Copilot | Ecosystem coverage, connector breadth, simple licensing |
+| Moveworks | Horizontal platform vs IT-only, broader search |
+| Coveo | Internal vs customer-facing, different problem |
+| Elastic | Turnkey vs build-it-yourself, time to value |
+| Guru | Search everything vs curated knowledge base |
+| SharePoint/legacy intranet | Modern AI search, no migration needed |
+| Nothing (ad hoc) | Unified search, productivity gains, stop relying on "just asking around" |
+| ChatGPT/generic AI | Grounded in company data, permission-aware, enterprise-grade |
 
 ---
 
 ## When NOT to Compete
 
-If the prospect already has a solid hosting solution and is happy with it, don't force a competitive conversation.
+If the prospect already has a strong commitment to a competitor and is happy with it, don't force a competitive conversation. Instead:
 
-Instead, look for:
-- **Adjacent opportunities** - New products or features that need hosting
-- **Gap filling** - Use cases their current solution doesn't cover
-- **Partnership** - Could Netlify power something new for them?
-
-The Jasper/Bolt.new angle is a good example: not "replace Webflow" but "power the use cases Webflow doesn't cover."
+- **Adjacent opportunities**: Can Glean cover departments or tools the current solution doesn't?
+- **Complement**: Some prospects run Copilot for Microsoft apps and Glean for everything else
+- **Timing**: Come back when they're up for renewal or hit the limitations of their current tool

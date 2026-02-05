@@ -11,17 +11,17 @@ Where to look and what each source reveals.
 - `/careers` or `/jobs` - Tech stack hints, growth signals, team structure
 - `/blog` - Recent launches, technical decisions, company direction
 - `/press` or `/news` - Announcements, funding, partnerships
-- `/integrations` - What other tools they connect to (important for infrastructure story)
+- `/integrations` - What other tools they connect to (important for understanding tool landscape)
 
 ### Product Documentation
 - `/docs` or `docs.company.com` - How the product actually works
 - API documentation - Technical capabilities, what developers can build
-- Help center - User workflows, how output is delivered
+- Help center - User workflows, how teams collaborate
 - Changelog - Recent features, what they're investing in
 
 ### LinkedIn
 - Company page - Employee count, recent hires, growth rate
-- Key people - CTO, VP Engineering, VP Product, Platform leads
+- Key people - CTO, VP Engineering, VP IT, Head of Knowledge Management
 - Job postings - Tech requirements reveal stack and priorities
 
 ### Job Postings
@@ -34,9 +34,10 @@ Check these sites for tech stack and priority clues:
 
 **What to look for in job postings:**
 - Required technologies (reveals current stack)
-- Team descriptions (reveals org structure)
-- Scale indicators ("millions of users", "high traffic")
-- Infrastructure roles (platform engineer, SRE, DevOps)
+- Team descriptions (reveals org structure and scale)
+- Scale indicators ("millions of users", "thousands of employees")
+- IT/knowledge management roles (signals pain around information access)
+- AI-related roles (signals interest in AI adoption)
 
 ---
 
@@ -44,29 +45,25 @@ Check these sites for tech stack and priority clues:
 
 ### BuiltWith.com (Always Check)
 **This is required, not optional.** Go to builtwith.com/[company-domain] to see:
-- Hosting provider (AWS, GCP, Vercel, Netlify, Cloudflare, etc.)
-- CDN usage
-- Frontend frameworks
+- SaaS tools in use (Salesforce, HubSpot, etc.)
 - Analytics and marketing tools
-- This reveals infrastructure decisions they've already made
+- Internal tooling signals
+- This reveals what systems they've already committed to
 
-### G2 / Capterra (Always Check)
-Search for the company on G2.com and Capterra.com. Look specifically for:
-- Complaints about content publishing or export workflows
-- Friction mentioned around getting output live
-- Integration limitations users complain about
-- This reveals pain points users actually feel
+### G2 / Capterra / Glassdoor (Always Check)
+Search for the company on G2.com and Capterra.com for product reviews, and Glassdoor for employee reviews. Look specifically for:
+- Complaints about finding information or knowledge management
+- Friction mentioned around tool sprawl or too many systems
+- Onboarding pain points
+- Collaboration and communication challenges
+- This reveals pain points employees and users actually feel
 
 ---
 
 ## Secondary Sources
 
-### Additional Tech Detection
-- Wappalyzer - Browser extension for tech detection
-- WhatRuns - Similar to Wappalyzer
-
 ### News & Press
-- Google News search: "[company name] funding" or "[company name] announcement"
+- Google News search: "[company name] funding" or "[company name] AI"
 - Crunchbase - Funding history, investors, company timeline
 - TechCrunch - Coverage of funding rounds and launches
 - Company blog - Often has the most detailed announcements
@@ -84,42 +81,45 @@ Search for the company on G2.com and Capterra.com. Look specifically for:
 | Source | Reveals |
 |--------|---------|
 | Careers page | Tech stack, team size, growth priorities |
-| Job postings | Specific technologies, infrastructure needs |
-| Product docs | How the product works, user workflows |
-| Integrations page | Ecosystem dependencies, publishing flow |
-| LinkedIn | Employee count, hiring velocity |
-| BuiltWith | Current hosting, frontend frameworks |
+| Job postings | Specific technologies, org structure |
+| Product docs | How the product works, customer workflows |
+| Integrations page | Ecosystem dependencies, tool landscape |
+| LinkedIn | Employee count, hiring velocity, key people |
+| BuiltWith | Current SaaS tools, infrastructure choices |
 | Crunchbase | Funding stage, investors, runway |
 | Blog/changelog | Product direction, recent bets |
+| Glassdoor | Internal culture, tool complaints, knowledge pain |
 
 ---
 
-## Infrastructure-Specific Sources
+## Knowledge-Specific Sources
 
-When trying to understand their deployment/hosting story:
+When trying to understand their knowledge and search challenges:
 
-1. **Integrations page** - Do they integrate with hosting platforms?
-2. **Documentation** - How do users publish or deploy output?
-3. **Job postings** - Are they hiring platform/infrastructure roles?
-4. **Technical blog posts** - Have they written about their architecture?
-5. **Conference talks** - Engineers often share infrastructure details at conferences
+1. **Integrations page** - What collaboration and docs tools do they use?
+2. **Careers page** - Are they hiring IT, knowledge management, or internal tools roles?
+3. **Glassdoor reviews** - Do employees mention difficulty finding information?
+4. **Technical blog posts** - Have they written about internal tooling or knowledge management?
+5. **Company size and growth rate** - Fast-growing companies have the worst knowledge silos
 
 ---
 
 ## Red Flags and Opportunity Signals
 
 ### Red Flags (May Not Be Good Prospect)
-- Already a vocal Vercel or Cloudflare customer
-- Recently announced infrastructure partnership with competitor
-- Very small scale (under 10 employees, pre-seed)
+- Already a vocal Microsoft Copilot or competitor customer (recently deployed)
+- Very small company (under 50 employees, likely don't need enterprise search)
+- No SaaS tool diversity (everything in one suite, less fragmentation pain)
 
 ### Opportunity Signals
-- Integrates with multiple publishing tools (fragmented, no single solution)
-- Users need to export/publish content but no native hosting
-- AI-generated content features without clear deployment path
-- Rapid scaling with infrastructure pain points mentioned
-- Recent funding that enables infrastructure investment
-- "Platform" or "multi-agent" positioning (may need deployment for agents)
+- Uses 5+ different SaaS tools for docs, comms, and collaboration (fragmentation)
+- Rapid hiring (50+ open roles, knowledge transfer pain)
+- Remote or distributed workforce (harder to find info without unified search)
+- Recent acquisition or merger (massive knowledge integration challenge)
+- Enterprise customer base (needs permission-aware search)
+- Mentions AI adoption in blog or press (forward-thinking, open to AI tools)
+- Using legacy intranet or SharePoint (ripe for modernization)
+- Hiring knowledge management or internal tools roles (actively feeling the pain)
 
 ---
 
@@ -127,7 +127,8 @@ When trying to understand their deployment/hosting story:
 
 Useful search patterns:
 - `"[company] tech stack"` - Find technical blog posts
-- `"[company] architecture"` - Find infrastructure details
+- `"[company] knowledge management"` - Find internal tooling stories
 - `"[company] integrations"` - Find ecosystem connections
 - `site:[company].com/blog` - Search their blog directly
-- `"[company]" "webflow" OR "wordpress" OR "hosting"` - Find publishing story
+- `"[company]" "confluence" OR "notion" OR "slack" OR "sharepoint"` - Find collaboration tools
+- `"[company]" glassdoor reviews` - Find employee sentiment
