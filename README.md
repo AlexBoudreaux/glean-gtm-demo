@@ -9,9 +9,9 @@
 </p>
 
 <p align="center">
-  <a href="https://glean-gtm-demo.vercel.app/">Live App</a> &middot;
-  <a href="#how-it-works">How It Works</a> &middot;
-  <a href="#quick-start">Quick Start</a>
+  <a href="https://glean-gtm-demo.vercel.app/">https://glean-gtm-demo.vercel.app</a> &middot;
+  <a href="https://glean-gtm-demo.vercel.app/how-it-works">How It Works</a> &middot;
+  <a href="https://glean-gtm-demo.vercel.app/architecture">Architecture</a>
 </p>
 
 ---
