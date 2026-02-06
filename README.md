@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://cdn.glean.com/glean-brand/logos/glean-logomark-blue.svg" alt="Glean" width="60" />
+  <img src="public/glean-logo.svg" alt="Glean" width="60" />
 </p>
 
 <h1 align="center">Glean Sales Deck Generator</h1>
