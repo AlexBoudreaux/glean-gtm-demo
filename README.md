@@ -1,48 +1,45 @@
-# Sales Deck Generator
+<p align="center">
+  <img src="https://cdn.glean.com/glean-brand/logos/glean-logomark-blue.svg" alt="Glean" width="60" />
+</p>
 
-AI-powered sales deck generator that chains three Claude skills together to produce personalized presentations for prospects.
+<h1 align="center">Glean Sales Deck Generator</h1>
 
----
+<p align="center">
+  AI-powered pipeline that researches prospects, builds sales strategy, and generates personalized slide decks. All in one conversation with Claude.
+</p>
 
-## What It Does
-
-```
-┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
-│    /research    │────▶│    /position    │────▶│  /presentation  │
-│                 │     │                 │     │                 │
-│ Finds public    │     │ Converts to     │     │ Generates HTML  │
-│ prospect info   │     │ sales strategy  │     │ slide deck      │
-└─────────────────┘     └─────────────────┘     └─────────────────┘
-                                                        │
-                                                        ▼
-                                               ┌─────────────────┐
-                                               │  Gallery App    │
-                                               │                 │
-                                               │ Host & share    │
-                                               │ presentations   │
-                                               └─────────────────┘
-```
-
-**Three Claude skills work together:**
-
-1. **Research** finds public info about a prospect (tech stack, funding, hiring signals, key personas)
-2. **Position** converts research into Glean-specific positioning (why Glean, why now, which case studies)
-3. **Presentation** generates a production-ready HTML sales deck
-
-The gallery app hosts the generated decks with PIN protection and shareable URLs.
+<p align="center">
+  <a href="https://glean-gtm-demo.vercel.app/">Live App</a> &middot;
+  <a href="#how-it-works">How It Works</a> &middot;
+  <a href="#quick-start">Quick Start</a>
+</p>
 
 ---
 
-## Tech Stack
+## How It Works
 
-| Layer | Technology |
-|-------|------------|
-| **Framework** | Next.js 14 (App Router) |
-| **Styling** | Tailwind CSS |
-| **Animation** | Framer Motion |
-| **Storage** | File-based (JSON + HTML) |
-| **Slides** | Standalone HTML (custom engine) |
-| **Hosting** | Vercel |
+Three Claude Code skills chain together to go from "company name" to "shareable sales deck" in a single session.
+
+```
+  /research              /position             /presentation
+ ┌──────────┐          ┌──────────┐          ┌──────────┐
+ │ Prospect │  ──────▶ │  Sales   │  ──────▶ │  HTML    │
+ │ Intel    │          │ Strategy │          │  Deck    │
+ └──────────┘          └──────────┘          └──────────┘
+  Scrapes public        Maps to Glean         Generates a
+  info, tech stack,     value props,          standalone
+  hiring signals        case studies          presentation
+                                                   │
+                                                   ▼
+                                            ┌──────────┐
+                                            │ Gallery  │
+                                            │ App      │
+                                            └──────────┘
+                                             PIN-protected
+                                             shareable URLs
+```
+
+Each skill feeds its output into the next. The final deck uploads to the gallery automatically.
 
 ---
 
@@ -53,100 +50,86 @@ npm install
 npm run dev
 ```
 
-The app runs on `localhost:3000`.
+Open [localhost:3000](http://localhost:3000).
 
-### Building a Deck
+### Generate a Deck
+
+Inside Claude Code, run the three skills in sequence:
+
+```
+/research Acme Corp
+/position
+/presentation
+```
+
+Or build from existing slide HTML:
 
 ```bash
-# Generate deck from AI output
-npx tsx scripts/build-deck.ts <slides-file> <output-file>
-
-# Example
 npx tsx scripts/build-deck.ts output/acme-slides.html output/acme-deck.html
 ```
+
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|-------|------------|
+| Framework | Next.js 14 (App Router) |
+| Styling | Tailwind CSS |
+| Animation | Framer Motion |
+| Storage | Vercel Blob |
+| Slides | Standalone HTML (custom engine) |
+| Hosting | Vercel |
+
+---
+
+## Features
+
+**Gallery Dashboard** with search, sort, and recently viewed tracking.
+
+**PIN-Protected Decks** with shareable URLs and full-screen presentation mode.
+
+**Standalone Slides** that work offline as self-contained HTML files with Glean branding.
 
 ---
 
 ## Project Structure
 
 ```
-├── app/
-│   ├── page.tsx              # Dashboard
-│   ├── deck/[slug]/          # Deck viewer with PIN protection
-│   ├── how-it-works/         # How the system works
-│   └── architecture/         # Technical architecture
-├── components/
-│   ├── Dashboard.tsx         # Main gallery view
-│   ├── DeckViewer.tsx        # Presentation viewer
-│   └── ui/                   # Reusable components
-├── .claude/skills/
-│   ├── research/             # Prospect research skill
-│   ├── position/             # Sales positioning skill
-│   └── presentation/         # Slide generation skill
-├── scripts/
-│   └── build-deck.ts         # Combines slides with template
-├── templates/
-│   └── reveal-base.html      # Reveal.js boilerplate
-└── lib/
-    └── storage.ts            # File-based storage
+app/                        → Next.js pages
+  deck/[slug]/              → PIN-gated deck viewer
+  how-it-works/             → System explainer
+  architecture/             → Technical architecture
+
+components/                 → React components
+
+.claude/skills/
+  research/                 → Prospect research skill
+  position/                 → Sales positioning skill
+  presentation/             → Slide generation skill
+
+scripts/build-deck.ts       → Combines slides with template
+templates/reveal-base.html  → Reveal.js boilerplate
+lib/storage.ts              → Vercel Blob storage
 ```
-
----
-
-## Features
-
-**Gallery Dashboard**
-- Browse all generated presentations
-- Search and sort by name or date
-- Recently viewed section
-- Delete decks
-
-**Deck Viewer**
-- PIN-protected access
-- Full-screen presentation mode
-- Keyboard navigation
-- Shareable URLs
-
-**Slide Generation**
-- Standalone HTML presentations
-- Custom styles and scripts support
-- Glean brand theming
 
 ---
 
 ## Environment Variables
 
 ```bash
-# .env.local
-ADMIN_SECRET=your-admin-secret        # For upload/delete API endpoints
-GALLERY_URL=http://localhost:3000      # Gallery app URL (set to prod URL after deploy)
+ADMIN_SECRET=...            # Auth for upload/delete APIs
+GALLERY_URL=...             # App URL (localhost or prod)
+BLOB_READ_WRITE_TOKEN=...   # Vercel Blob token
 ```
 
 ---
 
 ## Commands
 
-| Command | Description |
+| Command | What it does |
 |---------|-------------|
-| `npm run dev` | Start Next.js dev server |
+| `npm run dev` | Dev server |
 | `npm run build` | Production build |
-| `npm run lint` | Run ESLint |
+| `npm run lint` | ESLint |
 
----
-
-## Brand
-
-| Element | Value |
-|---------|-------|
-| Primary Blue | `#343CED` |
-| Accent Lime | `#D8FD49` |
-| Dark Navy | `#050735` |
-| Purple | `#8151F5` |
-| Orange | `#FF7E4C` |
-| Font | Inter |
-
----
-
-<p align="center">
-  Built with Claude Code
-</p>
